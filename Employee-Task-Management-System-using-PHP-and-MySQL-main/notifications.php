@@ -11,9 +11,10 @@ if (isset($_SESSION['role']) && isset($_SESSION['id'])) {
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Notifications</title>
+	<title>Thông báo</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/style.css">
+	<meta charset="UTF-8">
 
 </head>
 <body>
@@ -22,7 +23,7 @@ if (isset($_SESSION['role']) && isset($_SESSION['id'])) {
 	<div class="body">
 		<?php include "inc/nav.php" ?>
 		<section class="section-1">
-			<h4 class="title">All Notifications</h4>
+			<h4 class="title">Tất cả thông báo</h4>
 			<?php if (isset($_GET['success'])) {?>
       	  	<div class="success" role="alert">
 			  <?php echo stripcslashes($_GET['success']); ?>
@@ -32,9 +33,9 @@ if (isset($_SESSION['role']) && isset($_SESSION['id'])) {
 			<table class="main-table">
 				<tr>
 					<th>#</th>
-					<th>Message</th>
-					<th>Type</th>
-					<th>Date</th>
+					<th>Lời nhắn</th>
+					<th>Thể loại</th>
+					<th>Ngày</th>
 				</tr>
 				<?php $i=0; foreach ($notifications as $notification) { ?>
 				<tr>
@@ -46,7 +47,7 @@ if (isset($_SESSION['role']) && isset($_SESSION['id'])) {
 			   <?php	} ?>
 			</table>
 		<?php }else { ?>
-			<h3>You have zero notification</h3>
+			<h3>Bạn không có thông báo nào</h3>
 		<?php  }?>
 			
 		</section>

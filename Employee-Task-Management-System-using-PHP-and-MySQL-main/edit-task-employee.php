@@ -21,10 +21,10 @@ if (isset($_SESSION['role']) && isset($_SESSION['id']) && $_SESSION['role'] == "
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Edit Task</title>
+	<title>Chỉnh sửa công việc</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/style.css">
-
+	<meta charset="UTF-8">
 </head>
 <body>
 	<input type="checkbox" id="checkbox">
@@ -32,7 +32,7 @@ if (isset($_SESSION['role']) && isset($_SESSION['id']) && $_SESSION['role'] == "
 	<div class="body">
 		<?php include "inc/nav.php" ?>
 		<section class="section-1">
-			<h4 class="title">Edit Task <a href="my_task.php">Tasks</a></h4>
+			<h4 class="title">Chỉnh sửa <a href="my_task.php">Công việc</a></h4>
 			<form class="form-1"
 			      method="POST"
 			      action="app/update-task-employee.php">
@@ -49,24 +49,24 @@ if (isset($_SESSION['role']) && isset($_SESSION['id']) && $_SESSION['role'] == "
       	  <?php } ?>
 				<div class="input-holder">
 					<lable></lable>
-					<p><b>Title: </b><?=$task['title']?></p>
+					<p><b>Tiêu đề: </b><?=$task['title']?></p>
 				</div>
 				<div class="input-holder">
 					<lable></lable>
-					<p><b>Description: </b><?=$task['description']?></p>
+					<p><b>Mô tả: </b><?=$task['description']?></p>
 				</div><br>
             <div class="input-holder">
-					<lable>Status</lable>
+					<lable>Hiện trạng</lable>
 					<select name="status" class="input-1">
 						<option 
-						      <?php if( $task['status'] == "pending") echo"selected"; ?> >pending</option>
-						<option <?php if( $task['status'] == "in_progress") echo"selected"; ?>>in_progress</option>
-						<option <?php if( $task['status'] == "completed") echo"selected"; ?>>completed</option>
+						      <?php if( $task['status'] == "pending") echo"selected"; ?> >Chưa giải quyết</option>
+						<option <?php if( $task['status'] == "in_progress") echo"selected"; ?>>Đang thực hiện</option>
+						<option <?php if( $task['status'] == "completed") echo"selected"; ?>>Hoàn thành</option>
 					</select><br>
 				</div>
 				<input type="text" name="id" value="<?=$task['id']?>" hidden>
 
-				<button class="edit-btn">Update</button>
+				<button class="edit-btn">Thay đổi</button>
 			</form>
 			
 		</section>

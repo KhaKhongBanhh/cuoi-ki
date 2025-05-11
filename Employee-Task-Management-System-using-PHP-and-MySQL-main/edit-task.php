@@ -21,10 +21,10 @@ if (isset($_SESSION['role']) && isset($_SESSION['id']) && $_SESSION['role'] == "
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Edit Task</title>
+	<title>Chỉnh sửa công việc</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/style.css">
-
+	<meta charset="UTF-8">
 </head>
 <body>
 	<input type="checkbox" id="checkbox">
@@ -32,7 +32,7 @@ if (isset($_SESSION['role']) && isset($_SESSION['id']) && $_SESSION['role'] == "
 	<div class="body">
 		<?php include "inc/nav.php" ?>
 		<section class="section-1">
-			<h4 class="title">Edit Task <a href="tasks.php">Tasks</a></h4>
+			<h4 class="title">Chỉnh sửa <a href="tasks.php">Công việc</a></h4>
 			<form class="form-1"
 			      method="POST"
 			      action="app/update-task.php">
@@ -48,22 +48,22 @@ if (isset($_SESSION['role']) && isset($_SESSION['id']) && $_SESSION['role'] == "
 			</div>
       	  <?php } ?>
 				<div class="input-holder">
-					<lable>Title</lable>
+					<lable>Tiêu đề</lable>
 					<input type="text" name="title" class="input-1" placeholder="Full Name" value="<?=$task['title']?>"><br>
 				</div>
 				<div class="input-holder">
-					<lable>Description</lable>
+					<lable>Mô tả</lable>
 					<textarea name="description" rows="5" class="input-1" ><?=$task['description']?></textarea><br>
 				</div>
 				<div class="input-holder">
-					<lable>Snooze</lable>
+					<lable>Thông báo ngắn</lable>
 					<input type="date" name="due_date" class="input-1" placeholder="Snooze" value="<?=$task['due_date']?>"><br>
 				</div>
 				
             <div class="input-holder">
-					<lable>Assigned to</lable>
+					<lable>Giao cho</lable>
 					<select name="assigned_to" class="input-1">
-						<option value="0">Select employee</option>
+						<option value="0">Lựa chọn nhân viên</option>
 						<?php if ($users !=0) { 
 							foreach ($users as $user) {
 								if ($task['assigned_to'] == $user['id']) { ?>
@@ -75,7 +75,7 @@ if (isset($_SESSION['role']) && isset($_SESSION['id']) && $_SESSION['role'] == "
 				</div>
 				<input type="text" name="id" value="<?=$task['id']?>" hidden>
 
-				<button class="edit-btn">Update</button>
+				<button class="edit-btn">Thay đổi</button>
 			</form>
 			
 		</section>

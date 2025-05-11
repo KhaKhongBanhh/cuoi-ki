@@ -10,10 +10,10 @@ if (isset($_SESSION['role']) && isset($_SESSION['id']) && $_SESSION['role'] == "
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Create Task</title>
+	<title>Tạo công việc mới</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/style.css">
-
+	<meta charset="UTF-8">
 </head>
 <body>
 	<input type="checkbox" id="checkbox">
@@ -21,7 +21,7 @@ if (isset($_SESSION['role']) && isset($_SESSION['id']) && $_SESSION['role'] == "
 	<div class="body">
 		<?php include "inc/nav.php" ?>
 		<section class="section-1">
-			<h4 class="title">Create Task </h4>
+			<h4 class="title">Tạo công việc </h4>
 		   <form class="form-1"
 			      method="POST"
 			      action="app/add-task.php">
@@ -37,21 +37,21 @@ if (isset($_SESSION['role']) && isset($_SESSION['id']) && $_SESSION['role'] == "
 			</div>
       	  <?php } ?>
 				<div class="input-holder">
-					<lable>Title</lable>
+					<lable>Tên công việc</lable>
 					<input type="text" name="title" class="input-1" placeholder="Title"><br>
 				</div>
 				<div class="input-holder">
-					<lable>Description</lable>
+					<lable>Mô tả</lable>
 					<textarea type="text" name="description" class="input-1" placeholder="Description"></textarea><br>
 				</div>
 				<div class="input-holder">
-					<lable>Due Date</lable>
+					<lable>Hạn nộp</lable>
 					<input type="date" name="due_date" class="input-1" placeholder="Due Date"><br>
 				</div>
 				<div class="input-holder">
-					<lable>Assigned to</lable>
+					<lable>Giao việc cho</lable>
 					<select name="assigned_to" class="input-1">
-						<option value="0">Select employee</option>
+						<option value="0">Lựa chọn nhân viên</option>
 						<?php if ($users !=0) { 
 							foreach ($users as $user) {
 						?>
@@ -59,7 +59,7 @@ if (isset($_SESSION['role']) && isset($_SESSION['id']) && $_SESSION['role'] == "
 						<?php } } ?>
 					</select><br>
 				</div>
-				<button class="edit-btn">Create Task</button>
+				<button class="edit-btn">Tạo công việc</button>
 			</form>
 			
 		</section>

@@ -32,10 +32,10 @@ if (isset($_SESSION['role']) && isset($_SESSION['id']) && $_SESSION['role'] == "
 <!DOCTYPE html>
 <html>
 <head>
-	<title>All Tasks</title>
+	<title>Tất cả công việc</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/style.css">
-
+	<meta charset="UTF-8">
 </head>
 <body>
 	<input type="checkbox" id="checkbox">
@@ -44,11 +44,11 @@ if (isset($_SESSION['role']) && isset($_SESSION['id']) && $_SESSION['role'] == "
 		<?php include "inc/nav.php" ?>
 		<section class="section-1">
 			<h4 class="title-2">
-				<a href="create_task.php" class="btn">Create Task</a>
-				<a href="tasks.php?due_date=Due Today">Due Today</a>
-				<a href="tasks.php?due_date=Overdue">Overdue</a>
-				<a href="tasks.php?due_date=No Deadline">No Deadline</a>
-				<a href="tasks.php">All Tasks</a>
+				<a href="create_task.php" class="btn">Tạo công việc</a>
+				<a href="tasks.php?due_date=Due Today">Hạn hôm nay</a>
+				<a href="tasks.php?due_date=Overdue">Quá hạn</a>
+				<a href="tasks.php?due_date=No Deadline">Không có công việc</a>
+				<a href="tasks.php">Tất cả công việc</a>
  
 			</h4>
          <h4 class="title-2"><?=$text?> (<?=$num_task?>)</h4>
@@ -61,12 +61,12 @@ if (isset($_SESSION['role']) && isset($_SESSION['id']) && $_SESSION['role'] == "
 			<table class="main-table">
 				<tr>
 					<th>#</th>
-					<th>Title</th>
-					<th>Description</th>
-					<th>Assigned To</th>
-					<th>Due Date</th>
-					<th>Status</th>
-					<th>Action</th>
+					<th>Tiêu đề</th>
+					<th>Mô tả</th>
+					<th>Giao cho</th>
+					<th>Ngày quá hạn</th>
+					<th>Hiện trạng</th>
+					<th>Hành động</th>
 				</tr>
 				<?php $i=0; foreach ($tasks as $task) { ?>
 				<tr>
@@ -85,14 +85,14 @@ if (isset($_SESSION['role']) && isset($_SESSION['id']) && $_SESSION['role'] == "
 	               ?></td>
 	            <td><?=$task['status']?></td>
 					<td>
-						<a href="edit-task.php?id=<?=$task['id']?>" class="edit-btn">Edit</a>
-						<a href="delete-task.php?id=<?=$task['id']?>" class="delete-btn">Delete</a>
+						<a href="edit-task.php?id=<?=$task['id']?>" class="edit-btn">Chỉnh sửa</a>
+						<a href="delete-task.php?id=<?=$task['id']?>" class="delete-btn">Xóa</a>
 					</td>
 				</tr>
 			   <?php	} ?>
 			</table>
 		<?php }else { ?>
-			<h3>Empty</h3>
+			<h3>Rỗng</h3>
 		<?php  }?>
 			
 		</section>

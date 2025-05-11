@@ -10,10 +10,10 @@ if (isset($_SESSION['role']) && isset($_SESSION['id']) && $_SESSION['role'] == "
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Manage Users</title>
+	<title>Quản lý nhân viên</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/style.css">
-
+	<meta charset="UTF-8">
 </head>
 <body>
 	<input type="checkbox" id="checkbox">
@@ -21,7 +21,7 @@ if (isset($_SESSION['role']) && isset($_SESSION['id']) && $_SESSION['role'] == "
 	<div class="body">
 		<?php include "inc/nav.php" ?>
 		<section class="section-1">
-			<h4 class="title">Manage Users <a href="add-user.php">Add User</a></h4>
+			<h4 class="title">Quản lý người dùng <a href="add-user.php">Thêm người dùng</a></h4>
 			<?php if (isset($_GET['success'])) {?>
       	  	<div class="success" role="alert">
 			  <?php echo stripcslashes($_GET['success']); ?>
@@ -31,10 +31,10 @@ if (isset($_SESSION['role']) && isset($_SESSION['id']) && $_SESSION['role'] == "
 			<table class="main-table">
 				<tr>
 					<th>#</th>
-					<th>Full Name</th>
-					<th>Username</th>
-					<th>role</th>
-					<th>Action</th>
+					<th>Họ và Tên</th>
+					<th>Tên đăng nhập</th>
+					<th>Vai trò</th>
+					<th>Hành động</th>
 				</tr>
 				<?php $i=0; foreach ($users as $user) { ?>
 				<tr>
@@ -43,14 +43,14 @@ if (isset($_SESSION['role']) && isset($_SESSION['id']) && $_SESSION['role'] == "
 					<td><?=$user['username']?></td>
 					<td><?=$user['role']?></td>
 					<td>
-						<a href="edit-user.php?id=<?=$user['id']?>" class="edit-btn">Edit</a>
-						<a href="delete-user.php?id=<?=$user['id']?>" class="delete-btn">Delete</a>
+						<a href="edit-user.php?id=<?=$user['id']?>" class="edit-btn">Chỉnh sửa</a>
+						<a href="delete-user.php?id=<?=$user['id']?>" class="delete-btn">Xóa</a>
 					</td>
 				</tr>
 			   <?php	} ?>
 			</table>
 		<?php }else { ?>
-			<h3>Empty</h3>
+			<h3>Rỗng</h3>
 		<?php  }?>
 			
 		</section>

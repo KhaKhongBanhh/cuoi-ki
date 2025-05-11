@@ -28,9 +28,10 @@ if (isset($_SESSION['role']) && isset($_SESSION['id']) ) {
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Dashboard</title>
+	<title>Trang chủ</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/style.css">
+	<meta charset="UTF-8">
 </head>
 <body>
 	<input type="checkbox" id="checkbox">
@@ -42,54 +43,54 @@ if (isset($_SESSION['role']) && isset($_SESSION['id']) ) {
 				<div class="dashboard">
 					<div class="dashboard-item">
 						<i class="fa fa-users"></i>
-						<span><?=$num_users?> Employee</span>
+						<span><?=$num_users?> Nhân viên</span>
 					</div>
 					<div class="dashboard-item">
 						<i class="fa fa-tasks"></i>
-						<span><?=$num_task?> All Tasks</span>
+						<span><?=$num_task?> Tất cả công việc </span>
 					</div>
 					<div class="dashboard-item">
 						<i class="fa fa-window-close-o"></i>
-						<span><?=$overdue_task?> Overdue</span>
+						<span><?=$overdue_task?> Quá hạn</span>
 					</div>
 					<div class="dashboard-item">
 						<i class="fa fa-clock-o"></i>
-						<span><?=$nodeadline_task?> No Deadline</span>
+						<span><?=$nodeadline_task?> Không có công việc</span>
 					</div>
 					<div class="dashboard-item">
 						<i class="fa fa-exclamation-triangle"></i>
-						<span><?=$todaydue_task?> Due Today</span>
+						<span><?=$todaydue_task?> Hạn hôm nay</span>
 					</div>
 					<div class="dashboard-item">
 						<i class="fa fa-bell"></i>
-						<span><?=$overdue_task?> Notifications</span>
+						<span><?=$overdue_task?> Thông báo</span>
 					</div>
 					<div class="dashboard-item">
 						<i class="fa fa-square-o"></i>
-						<span><?=$pending?> Pending</span>
+						<span><?=$pending?> Chưa giải quyết</span>
 					</div>
 					<div class="dashboard-item">
 						<i class="fa fa-spinner"></i>
-						<span><?=$in_progress?> In progress</span>
+						<span><?=$in_progress?> Đang thực hiện</span>
 					</div>
 					<div class="dashboard-item">
 						<i class="fa fa-check-square-o"></i>
-						<span><?=$completed?> Completed</span>
+						<span><?=$completed?> Hoàn thành</span>
 					</div>
 				</div>
 			<?php }else{ ?>
 				<div class="dashboard">
 					<div class="dashboard-item">
 						<i class="fa fa-tasks"></i>
-						<span><?=$num_my_task?> My Tasks</span>
+						<span><?=$num_my_task?> Công việc của tôi</span>
 					</div>
 					<div class="dashboard-item">
 						<i class="fa fa-window-close-o"></i>
-						<span><?=$overdue_task?> Overdue</span>
+						<span><?=$overdue_task?> Quá hạn</span>
 					</div>
 					<div class="dashboard-item">
 						<i class="fa fa-clock-o"></i>
-						<span><?=$nodeadline_task?> No Deadline</span>
+						<span><?=$nodeadline_task?> Không có công việc</span>
 					</div>
 					<div class="dashboard-item">
 						<i class="fa fa-square-o"></i>
@@ -97,11 +98,11 @@ if (isset($_SESSION['role']) && isset($_SESSION['id']) ) {
 					</div>
 					<div class="dashboard-item">
 						<i class="fa fa-spinner"></i>
-						<span><?=$in_progress?> In progress</span>
+						<span><?=$in_progress?> Đang thực hiện </span>
 					</div>
 					<div class="dashboard-item">
 						<i class="fa fa-check-square-o"></i>
-						<span><?=$completed?> Completed</span>
+						<span><?=$completed?> Hoàn thành</span>
 					</div>
 				</div>
 			<?php } ?>

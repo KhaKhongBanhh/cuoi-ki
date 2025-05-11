@@ -9,9 +9,10 @@ if (isset($_SESSION['role']) && isset($_SESSION['id']) && $_SESSION['role'] == "
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Profile</title>
+	<title>Thông tin</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/style.css">
+	<meta charset="UTF-8">
 
 </head>
 <body>
@@ -20,18 +21,18 @@ if (isset($_SESSION['role']) && isset($_SESSION['id']) && $_SESSION['role'] == "
 	<div class="body">
 		<?php include "inc/nav.php" ?>
 		<section class="section-1">
-			<h4 class="title">Profile <a href="edit_profile.php">Edit Profile</a></h4>
+			<h4 class="title">Thông tin <a href="edit_profile.php">Chỉnh sửa thông tin</a></h4>
          <table class="main-table" style="max-width: 300px;">
 				<tr>
-					<td>Full Name</td>
+					<td>Họ và Tên</td>
 					<td><?=$user['full_name']?></td>
 				</tr>
 				<tr>
-					<td>User name</td>
+					<td>Tên đăng nhập</td>
 					<td><?=$user['username']?></td>
 				</tr>
 				<tr>
-					<td>Joined At</td>
+					<td>Thêm vào ở</td>
 					<td><?=$user['created_at']?></td>
 				</tr>
 			</table>

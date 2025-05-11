@@ -9,10 +9,10 @@ if (isset($_SESSION['role']) && isset($_SESSION['id']) && $_SESSION['role'] == "
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Edit Profile</title>
+	<title>Chỉnh sửa thông tin</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/style.css">
-
+	<meta charset="UTF-8">
 </head>
 <body>
 	<input type="checkbox" id="checkbox">
@@ -20,7 +20,7 @@ if (isset($_SESSION['role']) && isset($_SESSION['id']) && $_SESSION['role'] == "
 	<div class="body">
 		<?php include "inc/nav.php" ?>
 		<section class="section-1">
-			<h4 class="title">Edit Profile <a href="profile.php">Profile</a></h4>
+			<h4 class="title">Sửa thông tin <a href="profile.php">Thông tin</a></h4>
          <form class="form-1"
 			      method="POST"
 			      action="app/update-profile.php">
@@ -36,24 +36,24 @@ if (isset($_SESSION['role']) && isset($_SESSION['id']) && $_SESSION['role'] == "
 			</div>
       	  <?php } ?>
 				<div class="input-holder">
-					<lable>Full Name</lable>
+					<lable>Họ và Tên</lable>
 					<input type="text" name="full_name" class="input-1" placeholder="Full Name" value="<?=$user['full_name']?>"><br>
 				</div>
 
 				<div class="input-holder">
-					<lable>Old Password</lable>
+					<lable>Mật khẩu cũ</lable>
 					<input type="text" value="**********" name="password" class="input-1" placeholder="Old Password"><br>
 				</div>
 				<div class="input-holder">
-					<lable>New Password</lable>
+					<lable>Mật khẩu mới</lable>
 					<input type="text" name="new_password" class="input-1" placeholder="New Password"><br>
 				</div>
 				<div class="input-holder">
-					<lable>Confirm Password</lable>
+					<lable>Nhập lại mật khẩu</lable>
 					<input type="text" name="confirm_password" class="input-1" placeholder="Confirm Password"><br>
 				</div>
 
-				<button class="edit-btn">Change</button>
+				<button class="edit-btn">Thay đổi</button>
 			</form>
 
 		</section>

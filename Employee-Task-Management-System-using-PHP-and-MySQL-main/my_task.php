@@ -11,10 +11,10 @@ if (isset($_SESSION['role']) && isset($_SESSION['id'])) {
 <!DOCTYPE html>
 <html>
 <head>
-	<title>My Tasks</title>
+	<title>Công việc của tôi</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/style.css">
-
+	<meta charset="UTF-8">
 </head>
 <body>
 	<input type="checkbox" id="checkbox">
@@ -22,7 +22,7 @@ if (isset($_SESSION['role']) && isset($_SESSION['id'])) {
 	<div class="body">
 		<?php include "inc/nav.php" ?>
 		<section class="section-1">
-			<h4 class="title">My Tasks</h4>
+			<h4 class="title">Công việc của tôi</h4>
 			<?php if (isset($_GET['success'])) {?>
       	  	<div class="success" role="alert">
 			  <?php echo stripcslashes($_GET['success']); ?>
@@ -32,11 +32,11 @@ if (isset($_SESSION['role']) && isset($_SESSION['id'])) {
 			<table class="main-table">
 				<tr>
 					<th>#</th>
-					<th>Title</th>
-					<th>Description</th>
-					<th>Status</th>
-					<th>Due Date</th>
-					<th>Action</th>
+					<th>Tiêu đề</th>
+					<th>Mô tả</th>
+					<th>Hiện trạng</th>
+					<th>Quá hạn</th>
+					<th>Hành động</th>
 				</tr>
 				<?php $i=0; foreach ($tasks as $task) { ?>
 				<tr>
@@ -47,13 +47,13 @@ if (isset($_SESSION['role']) && isset($_SESSION['id'])) {
 	            <td><?=$task['due_date']?></td>
 
 					<td>
-						<a href="edit-task-employee.php?id=<?=$task['id']?>" class="edit-btn">Edit</a>
+						<a href="edit-task-employee.php?id=<?=$task['id']?>" class="edit-btn">Chỉnh sửa</a>
 					</td>
 				</tr>
 			   <?php	} ?>
 			</table>
 		<?php }else { ?>
-			<h3>Empty</h3>
+			<h3>Rỗng</h3>
 		<?php  }?>
 			
 		</section>

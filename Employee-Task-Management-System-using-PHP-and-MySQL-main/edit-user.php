@@ -20,10 +20,10 @@ if (isset($_SESSION['role']) && isset($_SESSION['id']) && $_SESSION['role'] == "
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Edit User</title>
+	<title>Chỉnh sửa người dùng</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/style.css">
-
+	<meta charset="UTF-8">
 </head>
 <body>
 	<input type="checkbox" id="checkbox">
@@ -31,7 +31,7 @@ if (isset($_SESSION['role']) && isset($_SESSION['id']) && $_SESSION['role'] == "
 	<div class="body">
 		<?php include "inc/nav.php" ?>
 		<section class="section-1">
-			<h4 class="title">Edit Users <a href="user.php">Users</a></h4>
+			<h4 class="title">Chỉnh sửa <a href="user.php">Người dùng</a></h4>
 			<form class="form-1"
 			      method="POST"
 			      action="app/update-user.php">
@@ -47,20 +47,20 @@ if (isset($_SESSION['role']) && isset($_SESSION['id']) && $_SESSION['role'] == "
 			</div>
       	  <?php } ?>
 				<div class="input-holder">
-					<lable>Full Name</lable>
+					<lable>Họ và Tên</lable>
 					<input type="text" name="full_name" class="input-1" placeholder="Full Name" value="<?=$user['full_name']?>"><br>
 				</div>
 				<div class="input-holder">
-					<lable>Username</lable>
+					<lable>Tên đăng nhập</lable>
 					<input type="text" name="user_name" value="<?=$user['username']?>" class="input-1" placeholder="Username"><br>
 				</div>
 				<div class="input-holder">
-					<lable>Password</lable>
+					<lable>Mật khẩu</lable>
 					<input type="text" value="**********" name="password" class="input-1" placeholder="Password"><br>
 				</div>
 				<input type="text" name="id" value="<?=$user['id']?>" hidden>
 
-				<button class="edit-btn">Update</button>
+				<button class="edit-btn">Thay đổi</button>
 			</form>
 			
 		</section>
